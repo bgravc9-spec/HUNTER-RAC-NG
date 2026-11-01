@@ -1,0 +1,42 @@
+HUNTER RACING - GITHUB'DAN APK YAP
+=================================
+
+GONDERDIGIN ORNEK: Html2Apk-debug.zip
+Bu dosyayi inceledik. Icinde SADECE app-debug.apk var.
+
+HUNTER RACING icin GitHub da AYNISINI uretecek:
+  HUNTER-RACING-debug.zip
+  +-- app-debug.apk
+
+NEREYE YUKLEYECEKSIN?
+1) Bu proje ZIP'ini bilgisayarda AC.
+2) github.com/new adresinde yeni repo olustur, adi HUNTER-RACING olsun.
+3) Repo ana ekraninda 'Add file' > 'Upload files' butonuna bas.
+4) ACILMIS ZIP klasorunun ICINDEKI dosyalari VE klasorleri secerek yukle.
+   OZELLIKLE .github/ KLASORUNU UNUTMA.
+   GitHub ana dizininde sunlar gorunmeli:
+     .github/workflows/android-apk.yml
+     app/
+     web/
+     tests/
+     build.gradle
+     settings.gradle
+     gradle.properties
+5) 'Commit changes' butonuna bas.
+6) 'Actions' sekmesinden 'HUNTER RACING - APK OLUSTUR' isini ac.
+7) Is otomatik baslamazsa 'Run workflow' > 'Run workflow'.
+8) Yesil tik gorununce calisan isin altindaki Artifacts bolumunden
+   'HUNTER-RACING-debug' adli paketi indir.
+9) ZIP'i ac. Icinde SADECE 'app-debug.apk' bulunacak.
+10) APK'yi telefona gonderip kur.
+
+ONEMLI (hata duzeltmesi):
+- GitHub Actions artik Html2Apk ornegindeki gibi sade derleme kullanir.
+- android-actions/setup-android ve sdkmanager adimlari kaldirildi;
+  onlar lisans/repository hatasi veriyordu.
+- compileSdk 34 + Gradle 8.7 + AGP 8.5.2 kullanilir.
+
+NOTLAR:
+- Bu ZIP kaynak projedir, Android APK DEGIL.
+- Telefonu yatay tut. Internet gerekmez, tek oyunculu 3D prototiptir.
+- GitHub derlemesi hata verirse kirmizi adimdan SON 30 log satirini paylas.
